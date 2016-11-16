@@ -7,8 +7,11 @@ moduleFor('route:index', 'Unit | Route | index', {
 
 test('should transition to rentals route', function(assert){
     let route = this.subject({
-        replaceWith(routerName) {
-            assert.equal(routerName, 'rentals', 'replace with router name rentals');
+        replaceWith(routeName) {
+            assert.equal(routeName, 'rentals', 'replace with router name rentals');
         }
     });
+
+    route.beforeModel();
+
 });
